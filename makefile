@@ -9,6 +9,7 @@ FLAGS += --betterC
 FLAGS += -m64
 FLAGS += -O0
 
+INCLUDE += -I=src -i
 
 WEB_FLAGS += --output-bc
 WEB_FLAGS += -mtriple=wasm32-unknown-unknown-webassembly
@@ -18,7 +19,7 @@ WEB_FNS += -s EXPORTED_FUNCTIONS='["_add"]'
 WEB_FNS += -s EXTRA_EXPORTED_RUNTIME_METHODS='["ccall", "cwrap"]'
 
 all:
-	$(COMPILER) $(MAIN) $(FLAGS) -of=$(OUT)
+	$(COMPILER) $(MAIN) $(FLAGS) $(INCLUDE) -of=$(OUT)
 	$(OUT)
 
 web:
