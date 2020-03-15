@@ -4,6 +4,6 @@ import core.stdc.stdio: printf;
 
 void main()
 {
-	printf("Hello DLang + BetterC!");
+	printf("Hello DLang + BetterC!\n");
 }
 
